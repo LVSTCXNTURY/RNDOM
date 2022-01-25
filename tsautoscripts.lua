@@ -6,22 +6,9 @@ local Teleport = MainUI.AddPage("Teleport",false)
 getgenv().Farm = false
 getgenv().W = 16
 getgenv().J = 50
+getgenv().Mas = 16
 getgenv().PickUp = false
 getgenv().ShouldRagdoll = false
---Annouce Shit
-game.StarterGui:SetCore("SendNotification",{
-    Title = "Credits",
-    Text = "Script Made By Executioner",
-    Duration = 999 ,
-    Button1 = "Nice"
-})
-game.StarterGui:SetCore("SendNotification",{
-    Title = "Teleport Feature",
-    Text = "Made By AkunGamers",
-    Duration = 999 ,
-    Button1 = "Nice"
-})
-
 
 --Auto Functions
 
@@ -41,9 +28,30 @@ Player.AddSlider("WalkSpeed", {Min = 16, Max = 300, Def = 16},function(v)
 end)
 
 --JumpPower Function
-Player.AddSlider("JumpPower", {Min = 50, Max = 250, Def = 50},function(v)
+Player.AddSlider("JumpPower", {Min = 50, Max = 250, Def = 250},function(v)
     game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = v
     wait(0.1)
+end)
+Player.AddButton("Max ALL",function ()
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 300
+wait(0.1)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = 250
+wait(0.1)
+getgenv().PickUp = v
+    repeat
+        wait(0.1)
+        pcall(function ()
+            firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"),game:GetService("Workspace").CurrentPointCoins.CoinFolder.CoinCollision,0)
+
+        end)
+    until 
+    getgenv().PickUp == false
+end)
+
+Player.AddButton("Min ALL",function ()
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 20
+wait(0.1)
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = 75
 end)
 --Anti Ragdoll
 Player.AddToggle("Anti Ragdoll",false,function(v)
@@ -95,7 +103,7 @@ Teleport.AddButton("Teleport SPAWN",function ()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10.932003, 123.015984, 941.786926, 0.996041, 1.07739364e-08, 0.0888950378, -1.14782379e-08, 1, 7.41164774e-09, -0.0888950378, -8.40266345e-09, 0.996041)
 end)
 Teleport.AddButton("Teleport ENDING",function ()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8.44440746, 188.084427, -694.506897, 0.999979734, 0.000236369015, -0.00635830685, 8.67214549e-05, 0.998710573, 0.0507657081, 0.00636210758, -0.0507652313, 0.998690367)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11 , 39, -1015, 0.999979734, 0.000236369015, -0.00635830685, 8.67214549e-05, 0.998710573, 0.0507657081, 0.00636210758, -0.0507652313, 0.998690367)
 end)
 Teleport.AddButton("Teleport BUTTON",function ()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-23.9377632, 121.999977, 976.817078, -0.996561646, -5.40651399e-08, -0.0828543752, -5.41555636e-08, 1, -1.15601395e-09, 0.0828543752, 3.33498651e-09, -0.996561646)
@@ -104,5 +112,5 @@ Teleport.AddButton("Teleport SHOP",function ()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-109.189941, 121.999977, 964.618896, -0.999879658, 8.12031864e-09, 0.0155128092, 9.12313691e-09, 1, 6.4573797e-08, -0.0155128092, 6.47075566e-08, -0.999879658)
 end)
 Teleport.AddButton("Teleport Researcher",function ()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7.84402561, 210.999954, 993.280945, 0.998962402, 3.5079939e-08, 0.0455424897, -3.24213012e-08, 1, -5.91157416e-08, -0.0455424897, 5.75778571e-08, 0.998962402)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9, 214, 976, 0.997, 3.5079939e-08, 0.0455424897, -3.24213012e-08, 1, -5.91157416e-08, -0.0455424897, 5.75778571e-08, 0.998962402, 5.75778571e-08, 0.998962402)
 end)
