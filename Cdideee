@@ -1,0 +1,96 @@
+
+local UILibrary = loadstring(game:HttpGet("https://pastebin.com/raw/V1ca2q9s"))()
+local MainUI = UILibrary.Load("CDID MOD MENU")
+local Player = MainUI.AddPage("Player",false)
+local Job = MainUI.AddPage("Job",false)
+local Wis = MainUI.AddPage("Wisata",false)
+local Clipon = false
+getgenv().Farm = false
+getgenv().W = 16
+getgenv().J = 50
+getgenv().Mas = 16
+getgenv().PickUp = false
+getgenv().ShouldRagdoll = false
+
+--Auto Functions
+
+local cor = coroutine.create(function ()
+    while true do
+        wait(0.2)
+        pcall(function ()
+            game.Players.LocalPlayer.Character:FindFirstChildOfClass("ForceField"):Destroy()
+        end)
+    end
+end)
+--coroutine.resume(cor)
+--WalkSpeed FUnction
+Player.AddSlider("WalkSpeed", {Min = 16, Max = 300, Def = 16},function(v)
+    game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = v
+    wait(0.1)
+end)
+Player.AddSlider("CAHAYA", {Min = 1, Max = 10, Def = 1},function(v)
+    game:GetService("Lighting").Brightness = v
+    wait(0.1)
+end)
+
+
+Player.AddButton("ULTIMATE",function ()
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 900
+wait(0.1)
+end)
+
+Player.AddButton("NC",function ()
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(1)
+wait(0.1)
+end)
+
+Player.AddButton("Max ALL",function ()
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 300
+wait(0.1)
+end)
+
+Player.AddButton("Min ALL",function ()
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 20
+wait(0.1)
+end)
+--Anti Ragdoll
+Player.AddToggle("Anti Ragdoll",false,function(v)
+    getgenv().ShouldRagdoll = v
+    local ragdoll = game.Players.LocalPlayer.Character:FindFirstChild("RagdollToggled")
+    repeat
+        wait(0.2)
+        if ragdoll then
+            ragdoll:FireServer(false)
+        end
+    until 
+    getgenv().ShouldRagdoll == false
+end)
+----TP JOB
+
+Job.AddButton("Teleport Bekasi",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14909.6279, 50.0198174, 875.907532, 0.745332301, -1.15514469e-08, 0.666693151, 1.00877466e-08, 1, 6.04884498e-09, -0.666693151, 2.21703234e-09, 0.745332301)
+end)
+Job.AddButton("Teleport Jakarta",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-25634.0508, 21.6544895, 9002.05469, 0.999876499, 4.96153021e-08, 0.0157172475, -4.95745169e-08, 1, -2.98460945e-09, -0.0157172475, 2.20506569e-09, 0.999876499 )
+end)
+Job.AddButton("Teleport BSD",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-26145.1953, 23.9968452, 14358.3691, -0.897770941, -1.95357686e-08, 0.440462679, -6.33250536e-08, 1, -8.47191544e-08, -0.440462679, -1.03950711e-07, -0.897770941)
+end)
+Job.AddButton("Teleport Bandung",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5283.21484, 206.205002, 27546.6094, 0.856879473, 6.8666111e-08, -0.515516758, -6.60422543e-08, 1, 2.34247608e-08, 0.515516758, 1.39736942e-08, 0.856879473)
+end)
+Job.AddButton("Teleport KFC PUNCAK",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13015.6162, 175.823471, 26511.6465, -0.978218377, -5.79425894e-08, -0.20757848, -3.84183529e-08, 1, -9.80884494e-08, 0.20757848, -8.79770994e-08, -0.978218377)
+end)
+Job.AddButton("Teleport Sentul",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16773.3027, -17.8602428, 18932.9336, -0.748875499, -9.74035075e-08, 0.662710726, -6.62457182e-08, 1, 7.21185103e-08, -0.662710726, 1.01060396e-08, -0.748875499)
+end)
+Job.AddButton("Teleport JOB",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-25211.0781, 23.3405037, 8621.82715, 0.732694805, -6.77138416e-08, -0.68055737, 8.09214473e-09, 1, -9.0785548e-08, 0.68055737, 6.10109296e-08, 0.732694805)
+end)
+
+--WISATAAA
+Wis.AddButton("Teleport Gedung Sate",function ()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(98.9537582, 204.363861, 36345.9961, 0.577679217, -9.76814931e-08, -0.816263855, 1.11996641e-07, 1, -4.04077198e-08, 0.816263855, -6.80761119e-08, 0.577679217)
+end)
+ 
