@@ -8,6 +8,7 @@ local Frame = Instance.new("Frame")
 local GO = Instance.new("TextButton")
 local X = Instance.new("TextButton")
 local CH = Instance.new("TextButton")
+local Notif = game:GetService("ReplicatedStorage").Sound.Notification2
 
 --Properties:
 
@@ -44,8 +45,6 @@ GO.MouseButton1Down:Connect(function()
 	})
 	wait(1)
 end)
-
-
 X.Name = "X"
 X.Parent = Frame
 X.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -58,7 +57,6 @@ X.TextSize = 14.000
 X.MouseButton1Down:Connect(function()
 	game:GetService("CoreGui")["EMS HUB"]:Destroy()
 end)
-
 CH.Name = "CH"
 CH.Parent = Frame
 CH.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
