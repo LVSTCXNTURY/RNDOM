@@ -36,7 +36,7 @@ GO.MouseButton1Down:Connect(function()
 	wait(150)
 	Notif:Play()
 	wait(0.1)
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24231.4395, 45.9552116, 13800.1143, -0.787371278, 5.25207859e-08, 0.616479099, 5.7185904e-08, 1, -1.21565362e-08, -0.616479099, 2.56822066e-08, -0.787371278)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Vehicles.UNDRT2sCar.Body.TakeMedkit.CFrame
 	wait(1)
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "GO TO NEXT DESTINATION",
