@@ -1,0 +1,73 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local EMSHUB = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local GO = Instance.new("TextButton")
+local X = Instance.new("TextButton")
+local CH = Instance.new("TextButton")
+
+--Properties:
+
+EMSHUB.Name = "EMS HUB"
+EMSHUB.Parent = game.CoreGui
+
+Frame.Parent = EMSHUB
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.163636357, 0, 0.837022126, 0)
+Frame.Size = UDim2.new(0, 147, 0, 71)
+Frame.Active = true
+Frame.Draggable = true
+
+GO.Name = "GO"
+GO.Parent = Frame
+GO.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+GO.Position = UDim2.new(0.552499294, 0, 0.171529621, 0)
+GO.Size = UDim2.new(0, 65, 0, 50)
+GO.Font = Enum.Font.SourceSans
+GO.Text = "GO"
+GO.TextColor3 = Color3.fromRGB(0, 0, 0)
+GO.TextSize = 14.000
+GO.MouseButton1Down:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Location.CFrame + Vector3.new(3,1,0)
+	wait(150)
+	Notif:Play()
+	wait(0.1)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24231.4395, 45.9552116, 13800.1143, -0.787371278, 5.25207859e-08, 0.616479099, 5.7185904e-08, 1, -1.21565362e-08, -0.616479099, 2.56822066e-08, -0.787371278)
+	wait(1)
+	game.StarterGui:SetCore("SendNotification",{
+		Title = "GO TO NEXT DESTINATION",
+		Text = "AMBIL MEDKIT!",
+		Duration = 5,
+	})
+	wait(1)
+end)
+
+
+X.Name = "X"
+X.Parent = Frame
+X.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+X.Position = UDim2.new(0.386573225, 0, -0.183445439, 0)
+X.Size = UDim2.new(0, 31, 0, 13)
+X.Font = Enum.Font.SourceSans
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(0, 0, 0)
+X.TextSize = 14.000
+X.MouseButton1Down:Connect(function()
+	game:GetService("CoreGui")["EMS HUB"]:Destroy()
+end)
+
+CH.Name = "CH"
+CH.Parent = Frame
+CH.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+CH.Position = UDim2.new(-0.0041407533, 0, 0.171529621, 0)
+CH.Size = UDim2.new(0, 65, 0, 50)
+CH.Font = Enum.Font.SourceSans
+CH.Text = "HOSPITAL"
+CH.TextColor3 = Color3.fromRGB(0, 0, 0)
+CH.TextSize = 14.000
+CH.MouseButton1Down:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24231.4395, 45.9552116, 13800.1143, -0.787371278, 5.25207859e-08, 0.616479099, 5.7185904e-08, 1, -1.21565362e-08, -0.616479099, 2.56822066e-08, -0.787371278)
+end)
