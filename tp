@@ -1,7 +1,7 @@
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 mouse.KeyDown:Connect(function(Key) 
- if Key == "g" then
+ if Key == "t" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24231.4395, 45.9552116, 13800.1143, -0.787371278, 5.25207859e-08, 0.616479099, 5.7185904e-08, 1, -1.21565362e-08, -0.616479099, 2.56822066e-08, -0.787371278)
 end
 end)
